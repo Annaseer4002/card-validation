@@ -1,0 +1,28 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateCardNumber = void 0;
+const validateCardNumber = (cardNumber) => {
+    // remove non-digit characters
+    const sanitized = cardNumber.replace(/\D/g, "");
+    let sum = 0;
+    let shouldDouble = false;
+    // loop through the digits from right to left
+    for (let i = sanitized.length - 1; i >= 0; i--) {
+        // convert to integer
+        let digit = parseInt(sanitized.charAt(i));
+        // double every second digit from the right
+        if (shouldDouble) {
+            digit *= 2;
+            if (digit > 9) {
+                digit -= 9;
+            }
+        }
+        // add to sum
+        sum += digit;
+        // flip the shouldDouble between true and false
+        shouldDouble = !shouldDouble;
+    }
+    return sum % 10 === 0;
+};
+exports.validateCardNumber = validateCardNumber;
+//# sourceMappingURL=card.js.map
