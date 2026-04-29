@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 dotenv.config()
-// import Router from "./route/index"
+import Router from "./route/index"
 
 const app = express()
 app.use(express.json())
@@ -13,4 +13,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 
-// app.use('/api', Router  )
+app.use('/api', Router  )
