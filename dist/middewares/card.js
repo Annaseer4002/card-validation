@@ -17,4 +17,5 @@ const validateDtoMiddleware = (dtoClass) => {
     };
 };
 exports.validateDtoMiddleware = validateDtoMiddleware;
+exports.default = exports.validateDtoMiddleware;
 //# sourceMappingURL=card.js.map

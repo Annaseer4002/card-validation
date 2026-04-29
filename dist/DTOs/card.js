@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidateCardDto = void 0;
 const class_validator_1 = require("class-validator");
 class ValidateCardDto {
-    cardNumber; // The ! tells TS it will be initialized by the request
 }
 exports.ValidateCardDto = ValidateCardDto;
 __decorate([
@@ -22,10 +21,10 @@ __decorate([
         message: 'Card number must contain only digits, spaces, or dashes'
     }),
     (0, class_validator_1.MinLength)(12, {
-        message: 'Card number must be at least 13 characters long'
+        message: 'Card number must be at least 12 characters long'
     }),
     (0, class_validator_1.MaxLength)(19, {
-        message: 'Card number must be at most 22 characters long'
+        message: 'Card number must be at most 19 characters long'
     }),
     __metadata("design:type", String)
 ], ValidateCardDto.prototype, "cardNumber", void 0);
