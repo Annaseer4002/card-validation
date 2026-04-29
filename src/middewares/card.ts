@@ -14,9 +14,10 @@ export const validateDtoMiddleware = (dtoClass: any) => {
       });
     }
     
+    // IMPORTANT: Overwrite req.body with the transformed DTO instance
+    req.body = dto; 
     next();
   };
 };
-
 
 export default validateDtoMiddleware

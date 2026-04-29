@@ -3,6 +3,10 @@ export const validateCardNumber = (cardNumber: string): boolean => {
  // remove non-digit characters
 const sanitized = cardNumber.replace(/\D/g, "");
 
+if (sanitized.length < 12 || sanitized.length > 19) {
+    return false; // card number must be between 12 and 19 digits
+}
+
 let sum = 0;
 let shouldDouble = false;
 
